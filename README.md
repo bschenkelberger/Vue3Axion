@@ -22,3 +22,9 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+###
+- https://www.koderhq.com/tutorial/vue/http-axios/
+
+Add Boostrap
+- npm install --save bootstrap

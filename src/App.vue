@@ -1,5 +1,9 @@
 <template>
 <div>
+   <BootstrapTest />
+</div>
+
+<div>
   <h1>Daten aus einer REST - API, via Axion</h1>
   <hr>
   <button v-on:click="loadUser">Load User</button>
@@ -20,10 +24,14 @@
 </template>
 
 <script>
-
+import BootstrapTest from './components/BoostrapTest'
 import axios from 'axios'
 
 export default {
+  name: 'App',
+  components: {
+    BootstrapTest
+  },
   data() {
     return {
       user: {
