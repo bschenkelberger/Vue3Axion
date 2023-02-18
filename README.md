@@ -28,3 +28,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 Add Boostrap
 - npm install --save bootstrap
+Add Router
+- https://www.vuemastery.com/blog/vue-router-a-tutorial-for-vue-3/
+- npm i vue-router@next
+
