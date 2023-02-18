@@ -1,15 +1,62 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<div>
+  <h1>Daten aus einer REST - API, via Axion</h1>
+  <hr>
+  <button v-on:click="loadUser">Load User</button>
+  <div v-if="showUser">
+    <div class="row">
+      <div class="col">
+        <p> GET call</p>
+      </div>
+      <div class="col">
+        <p>Vorname: {{ user.firstname }}</p>
+        <p>Nachname: {{ user.lastname }}</p>
+        <p>Standr: {{ user.city }}</p>
+      </div>
+    </div>
+  </div>
+  <hr>
+</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import axios from 'axios'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      user: {
+        firstname: '',
+        lastname: '',
+        city: ''
+      },
+      showUser: false
+    }
+  },
+  mounted() {
+/*    
+    axios
+      .get('http://localhost:8080/helloWorldBean')
+      .then((response) => {
+        console.log(response)
+        this.user = response.data;
+      })
+*/      
+  },
+  methods: {
+    loadUser() {
+      if(!this.showUser) {
+        axios
+          .get('http://localhost:8080/helloWorldBean')
+          .then((response) => {
+            console.log(response)
+            this.user = response.data;
+          })
+          .catch((error) => console.log(error))
+      }
+      this.showUser = !this.showUser
+    }
   }
 }
 </script>
