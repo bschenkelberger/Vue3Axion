@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1>Daten aus einer REST - API, via Axion</h1>
+    <h1>Daten aus einer REST - API, via 
+      <a href="https://axios-http.com/docs/intro">Axios</a>   </h1>
+
     <hr>
     <button v-on:click="loadUser">Load User</button>
     <div v-if="showUser">
